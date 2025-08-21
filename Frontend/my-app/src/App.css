@@ -1,0 +1,319 @@
+/* HomeComponent.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+:root {
+  --primary-color: #3a86ff;
+  --secondary-color: #8338ec;
+  --accent-color: #ff006e;
+  --background-color: #030614;
+  --surface-color: #0f172a;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+}
+
+.home-container {
+  min-height: 100vh;
+  background: var(--background-color);
+  background: linear-gradient(135deg, var(--background-color) 0%, #071037 100%);
+  color: var(--text-primary);
+  font-family: 'Space Grotesk', 'Roboto', sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  backdrop-filter: blur(8px);
+  background-color: rgba(15, 23, 42, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: 10;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.5px;
+}
+
+.time-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 1.5rem;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.history-button {
+  background-color: rgba(58, 134, 255, 0.1);
+}
+
+.logout-button {
+  background-color: rgba(255, 0, 110, 0.1);
+}
+
+/* Content */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 5;
+}
+
+.tagline-container {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.tagline {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sub-tagline {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-top: 0;
+}
+
+.pulse-circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--primary-color) 0%, rgba(58, 134, 255, 0) 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0.15;
+}
+
+.join-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  background-color: rgba(15, 23, 42, 0.4);
+  border-radius: 1rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.input-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.meeting-input {
+  flex: 1;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.meeting-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(58, 134, 255, 0.2);
+}
+
+.meeting-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.join-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 1.5rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.join-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Floating Elements Animation */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+  pointer-events: none;
+  animation: float 15s infinite;
+}
+
+.particle-1 {
+  width: 150px;
+  height: 150px;
+  background: var(--primary-color);
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+  filter: blur(5px);
+}
+
+.particle-2 {
+  width: 200px;
+  height: 200px;
+  background: var(--secondary-color);
+  top: 60%;
+  left: 80%;
+  animation-delay: -2s;
+  filter: blur(8px);
+}
+
+.particle-3 {
+  width: 100px;
+  height: 100px;
+  background: var(--accent-color);
+  top: 75%;
+  left: 25%;
+  animation-delay: -5s;
+  filter: blur(4px);
+}
+
+.particle-4 {
+  width: 180px;
+  height: 180px;
+  background: var(--primary-color);
+  top: 30%;
+  left: 85%;
+  animation-delay: -8s;
+  filter: blur(7px);
+}
+
+.particle-5 {
+  width: 120px;
+  height: 120px;
+  background: var(--secondary-color);
+  top: 80%;
+  left: 65%;
+  animation-delay: -12s;
+  filter: blur(5px);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-50px) translateX(50px) rotate(45deg);
+  }
+  66% {
+    transform: translateY(30px) translateX(-30px) rotate(-30deg);
+  }
+  100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .tagline {
+    font-size: 2rem;
+  }
+  
+  .sub-tagline {
+    font-size: 1rem;
+  }
+  
+  .input-container {
+    flex-direction: column;
+  }
+  
+  .join-button {
+    padding: 0.8rem;
+  }
+}
+
+
