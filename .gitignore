@@ -1,0 +1,42 @@
+# Node.js (Frontend + Backend)
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
+package-lock.json
+*.log
+
+# Python (Backend)
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.egg-info/
+*.egg
+
+# Virtual environment
+env/
+venv/
+ENV/
+.env
+
+# Frontend build output
+Frontend/my-app/build/
+Frontend/my-app/.next/
+Frontend/my-app/out/
+
+# IDE / Editor
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Uploads (optional, if user uploads shouldn’t go in git)
+uploads/
+
+# Misc
+*.bak
+*.tmp
